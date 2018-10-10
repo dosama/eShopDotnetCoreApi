@@ -2,25 +2,32 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using eShopApi.Bussiness.Services;
+using eShopApi.Repository.Services;
+using eShopApi.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace eShopApi.Controllers
 {
     [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class ProductsController : Controller
     {
-        // GET api/values
-        [HttpGet]
-        public string Get()
+        private readonly IProductService _productService;
+        public ProductsController(IProductService productService)
         {
-            return "Welcome to eShop Service";
+            _productService = productService;
+        }
+        [HttpGet]
+        public async Task<IEnumerable<ProductViewModel>> Get()
+        {
+            return await _productService.GetAllProducts();
         }
 
-        // GET api/values/5
+      
         [HttpGet("{id}")]
-        public string Get(int id)
+        public ProductViewModel Get(int id)
         {
-            return "value";
+            return null;
         }
 
         // POST api/values

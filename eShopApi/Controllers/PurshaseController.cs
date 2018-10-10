@@ -7,13 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 namespace eShopApi.Controllers
 {
     [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class PurshaseController : Controller
     {
         // GET api/values
         [HttpGet]
-        public string Get()
+        public IEnumerable<string> Get()
         {
-            return "Welcome to eShop Service";
+            return new string[] { "value1", "value2" };
         }
 
         // GET api/values/5

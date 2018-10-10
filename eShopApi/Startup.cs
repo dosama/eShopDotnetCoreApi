@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using eShopApi.Bussiness;
+using eShopApi.Bussiness.Services;
 using eShopApi.Models;
+using eShopApi.Repository;
+using eShopApi.Repository.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -30,6 +34,13 @@ namespace eShopApi
            // var connection = @"Server=localhost;Database=EShop;Trusted_Connection=True;ConnectRetryCount=0";
             services.AddDbContext<EShopContext>
                 (options => options.UseSqlServer(connection));
+            services.AddScoped<IProductReopsitory, ProductRepository>();
+            services.AddScoped<IUserReopsitory, UserRepository>();
+            services.AddScoped<IPurshaseReopsitory, PurshaseRepository>();
+
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IPurshaseService, PurshaseService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
