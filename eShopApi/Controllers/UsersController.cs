@@ -36,7 +36,16 @@ namespace eShopApi.Controllers
         [HttpGet("userName/{username}")]
         public async Task<UserViewModel> Get(string username)
         {
-            return await _userService.GetUserByUserName(username);
+            try
+            {
+                return await _userService.GetUserByUserName(username);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return null;
+            }
+         
 
         }
 
