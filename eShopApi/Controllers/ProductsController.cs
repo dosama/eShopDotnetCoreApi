@@ -20,7 +20,16 @@ namespace eShopApi.Controllers
         [HttpGet]
         public async Task<IEnumerable<ProductViewModel>> Get()
         {
-            return await _productService.GetAllProducts();
+            try
+            {
+                return await _productService.GetAllProducts();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return null;
+            }
+          
         }
 
       

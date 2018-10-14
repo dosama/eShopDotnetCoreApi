@@ -37,6 +37,7 @@ namespace eShopApi
             services.AddScoped<IProductReopsitory, ProductRepository>();
             services.AddScoped<IUserReopsitory, UserRepository>();
             services.AddScoped<IPurshaseReopsitory, PurshaseRepository>();
+            services.AddScoped<IProductImagesReopsitory, ProductImagesRepository>();
 
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IUserService, UserService>();

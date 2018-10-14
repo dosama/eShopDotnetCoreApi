@@ -14,7 +14,7 @@ namespace eShopApi.Models
         public Guid ProductId { get; set; }
         public Products Product { get; set; }
         public string ImageUrl { get; set; }
-        public bool IsMainImage { get; set; }
+       
 
     }
 }
