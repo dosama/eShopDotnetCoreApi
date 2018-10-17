@@ -39,7 +39,7 @@ namespace eShopApi.Bussiness
                 });
             }
 
-            return result;
+            return result.OrderBy(x=>x.Price);
         }
 
         public Task AddProduct(ProductViewModel item)

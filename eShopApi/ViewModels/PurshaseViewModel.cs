@@ -14,6 +14,7 @@ namespace eShopApi.ViewModels
         public Guid UserId { get; set; }
     
         public int Quantity { get; set; }
+
         public DateTime CreatedOn { get; set; }
     }
 }

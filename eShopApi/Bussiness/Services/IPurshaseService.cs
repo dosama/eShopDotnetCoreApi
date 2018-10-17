@@ -8,6 +8,6 @@ namespace eShopApi.Bussiness.Services
     public interface IPurshaseService
     {
         Task<IEnumerable<PurshaseViewModel>> GetAllPurshases();
-        Task SubmitPurshase(PurshaseViewModel item);
+        Task SubmitPurshase(List<PurshaseViewModel> item);
     }
 }
